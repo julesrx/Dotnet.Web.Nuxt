@@ -39,7 +39,7 @@ app.MapGet("/products", () => [...]);
 
 Then, a new entry is added to the `proxy-paths.json` file :
 
-```json
+```js
 [
   // ...
   "/products"
