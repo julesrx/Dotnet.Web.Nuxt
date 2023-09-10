@@ -10,7 +10,7 @@
     "type": "project"
   },
   "preferNameDirectory": true,
-  "sourceName": "Spartacus",
+  "sourceName": "Dotnet.Web.Nuxt",
   "sources": [
     {
       "modifiers": [

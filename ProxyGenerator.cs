@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Text.Json;
 
-namespace Spartacus;
+namespace Dotnet.Web.Nuxt;
 
 public static class ProxyGenerator
 {
