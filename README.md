@@ -2,9 +2,11 @@
 
 Custom .NET 6+ template using [Nuxt 3](https://nuxt.com/) as frontend and utilizing [ASP.NET Core's SPA](https://learn.microsoft.com/en-us/aspnet/core/client-side/spa/intro) feature during development.
 
+This template is designed to be as minimal as possible. This is why you won't see controllers or authentication support (at least for now...).
+
 ## Usage
 
-This template can be installed in multiple ways.
+This template can be installed in multiple ways :
 
 ### Using `dotnet new`
 
@@ -22,7 +24,7 @@ This template can be installed in multiple ways.
 ### Downloading the full repo zip file
 
 1. downloading the full repo zip file
-2. extract to the disired location
+2. extract to the desired location
 3. repeat the [template](#using-githubs-template-feature) steps 2 through 4
 
 ## How it works
@@ -42,7 +44,7 @@ Then, a new entry is added to the `proxy-paths.json` file :
 ```js
 [
   // ...
-  "/products"
+  '/products'
 ]
 ```
 
