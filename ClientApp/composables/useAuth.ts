@@ -29,6 +29,7 @@ const createStore = () => {
         user,
         isAuthenticated,
         isTokenExpired,
+        accessToken: jwt,
         login,
     };
 };
