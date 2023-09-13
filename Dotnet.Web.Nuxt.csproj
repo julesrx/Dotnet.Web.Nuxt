@@ -6,6 +6,7 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <!-- Spa configuration -->
     <PropertyGroup>
         <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
         <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
@@ -16,16 +17,25 @@
         <SpaProxyLaunchCommand>pnpm dev</SpaProxyLaunchCommand>
     </PropertyGroup>
 
+    <!-- Ensure the Spa dependencies are installed in development mode -->
+    <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+        <Message Importance="high" Text="Restoring dependencies using 'pnpm'."/>
+        <Exec WorkingDirectory="$(SpaRoot)" Command="pnpm install"/>
+    </Target>
+
+    <!-- Exclude the Spa folder and sources files from the output -->
     <ItemGroup>
         <Content Remove="$(SpaRoot)**"/>
         <None Remove="$(SpaRoot)**"/>
         <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**"/>
     </ItemGroup>
 
+    <!-- Set up the Spa build script when publishing -->
     <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
         <Exec WorkingDirectory="$(SpaRoot)" Command="pnpm install --frozen-lockfile"/>
         <Exec WorkingDirectory="$(SpaRoot)" Command="pnpm generate"/>
 
+        <!-- Include the dist files in the wwwroot directory -->
         <ItemGroup>
             <DistFiles Include="$(SpaRoot)dist\**"/>
             <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
@@ -39,6 +49,5 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="8.0.0-preview.7.23375.9"/>
     </ItemGroup>
-
 
 </Project>

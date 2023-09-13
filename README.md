@@ -27,7 +27,9 @@ This template can be installed in multiple ways :
 
 ## How it works
 
-During development, .NET automatically starts the Nuxt development server.  
+During development, .NET automatically installs the dependencies with [`pnpm`](https://pnpm.io/) and starts the Nuxt development server with `pnpm dev`.  
+This will also generate the missing https certificates with the [`dotnet dev-certs`](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-dev-certs) command.
+
 The Nuxt dev server is then configured to proxy the `/_` endpoint to the .NET server.  
 This allows the front-end to communicate to the back-end since they run on different ports.
 
