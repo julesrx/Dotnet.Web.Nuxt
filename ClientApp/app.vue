@@ -1,8 +1,11 @@
 <script lang="ts" setup>
-const { data: message } = await useFetch<string>('/_/hello')
-await useFetch<string>('/_/auth/token',{method:'POST'})
+// const {data: message} = await useFetch<string>('/_/hello')
+
+const {isAuthenticated, login} = useAuth()
 </script>
 
 <template>
- <p>The server wants to say hello: <b>{{ message }}</b></p>
+  {{ isAuthenticated }}
+  <button @click="login">Login</button>
+  <!--  <p>The server wants to say hello: <b>{{ message }}</b></p>-->
 </template>

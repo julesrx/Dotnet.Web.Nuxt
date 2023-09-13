@@ -30,6 +30,7 @@ app.MapGet("/_/hello", () => "Hello World!").RequireAuthorization();
 
 app.MapPost("/_/auth/token", (IConfiguration config) =>
 {
+    // Store this secretly
     var key = Encoding.UTF8.GetBytes(config.GetValue<string>("JwtSettings:Key")!);
 
     // Get this from the request and validate with a password 
