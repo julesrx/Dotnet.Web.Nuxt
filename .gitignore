@@ -511,6 +511,11 @@ logs
 # App
 proxy-paths.json
 
+# Locks
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
+
+# Certificates
+*.pem
+*.key

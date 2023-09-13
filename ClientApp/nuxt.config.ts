@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     nitro: {
         devProxy: {
             '/_': {
-                target: 'http://localhost:7100/_',
+                target: 'https://localhost:7100/_',
                 changeOrigin: true,
                 secure: false
             }
