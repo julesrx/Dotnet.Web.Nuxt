@@ -1,8 +1,6 @@
 # Dotnet.Web.Nuxt
 
-Custom .NET 6+ template using [Nuxt 3](https://nuxt.com/) as frontend and utilizing [ASP.NET Core's SPA](https://learn.microsoft.com/en-us/aspnet/core/client-side/spa/intro) feature during development.
-
-This template is designed to be as minimal as possible. This is why you won't see controllers or authentication support (at least for now...).
+Custom .NET 6+ template using [Nuxt 3](https://nuxt.com/) as front-end and utilizing [ASP.NET Core's SPA](https://learn.microsoft.com/en-us/aspnet/core/client-side/spa/intro) feature during development.
 
 ## Usage
 
@@ -30,24 +28,7 @@ This template can be installed in multiple ways :
 ## How it works
 
 During development, .NET automatically starts the Nuxt development server.  
-The Nuxt server is then configured to proxy all of the .NET server's endpoints, so that the front end can communicate to the backend without having to change the URL between development and production environments.  
-This mapping is generated using the [`ProxyGenerator.cs`](ProxyGenerator.cs) file, which is automatically removed in production.
-
-For example, if the backend app maps a new endpoint :
-
-```cs
-app.MapGet("/products", () => [...]);
-```
-
-Then, a new entry is added to the `proxy-paths.json` file :
-
-```js
-[
-  // ...
-  '/products'
-]
-```
-
-This file is then imported by the [`nuxt.config.ts`](nuxt.config.ts) file to configure the dev proxy.
+The Nuxt dev server is then configured to proxy the `/_` endpoint to the .NET server.  
+This allows the front-end to communicate to the back-end since they run on different ports.
 
 See the [nitro documentation](https://nitro.unjs.io/config#devproxy) for more details on how the proxy mapping works.
