@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 const { data: message } = await useFetch<string>('/_/hello')
+await useFetch<string>('/_/auth/token',{method:'POST'})
 </script>
 
 <template>
