@@ -1,13 +1,9 @@
-using Dotnet.Web.Nuxt;
-
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/hello", () => "Hello World!");
+app.MapGet("/_/hello", () => "Hello World!");
 
 app.UseStaticFiles();
 app.MapFallbackToFile("index.html");
-
-app.GenerateSpaProxyRoutes();
 
 app.Run();
