@@ -17,10 +17,9 @@
         {
           "exclude": [
             ".idea/**",
-            "**/.nuxt/**",
+            ".github/**",
             "**/node_modules/**",
-            "**/pnpm-lock.yaml",
-            "**/proxy-paths.json"
+            "**/pnpm-lock.yaml"
           ]
         }
       ]
@@ -31,8 +30,8 @@
       "type": "parameter",
       "description": "The target framework for the project.",
       "datatype": "text",
-      "replaces": "net8.0",
-      "defaultValue": "net8.0"
+      "replaces": "net7.0",
+      "defaultValue": "net7.0"
     }
   },
   "postActions": [
