@@ -1,6 +1,6 @@
 name: Build and publish
 
-on: [push]
+on: [ push ]
 
 jobs:
   build:
@@ -11,13 +11,25 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
+        
+      - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      
+      - name: Install pnpm
+        run: npm i -g pnpm@8
+
       - name: Install dependencies
         run: dotnet restore
+
       - name: Build
         run: dotnet build -c Release --no-restore
+
       - name: Publish
         run: dotnet publish -c Release --no-restore --no-build
