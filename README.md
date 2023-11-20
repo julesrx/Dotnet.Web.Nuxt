@@ -2,7 +2,7 @@
 
 [![Build and publish](https://github.com/julesrx/Dotnet.Web.Nuxt/actions/workflows/build-and-publish.yml/badge.svg)](https://github.com/julesrx/Dotnet.Web.Nuxt/actions/workflows/build-and-publish.yml)
 
-Custom .NET 6+ template using [Nuxt 3](https://nuxt.com/) as front-end and utilizing [ASP.NET Core's SPA](https://learn.microsoft.com/en-us/aspnet/core/client-side/spa/intro) feature during development.
+Custom .NET 8+ template using [Nuxt 3](https://nuxt.com/) as front-end and utilizing [ASP.NET Core's SPA](https://learn.microsoft.com/en-us/aspnet/core/client-side/spa/intro) feature during development.
 
 ## Usage
 

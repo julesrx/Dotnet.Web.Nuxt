@@ -30,8 +30,8 @@
       "type": "parameter",
       "description": "The target framework for the project.",
       "datatype": "text",
-      "replaces": "net7.0",
-      "defaultValue": "net7.0"
+      "replaces": "net8.0",
+      "defaultValue": "net8.0"
     }
   },
   "postActions": [
