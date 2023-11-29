@@ -514,3 +514,4 @@ proxy-paths.json
 # Certificates
 *.pem
 *.key
+.cert.name
