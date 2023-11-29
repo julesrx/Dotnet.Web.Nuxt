@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
-    devtools: {enabled: true},
-    devServer: {host: 'localhost'},
+    devtools: { enabled: true },
+    devServer: { host: 'localhost' },
     nitro: {
         devProxy: {
             '/_': {
@@ -11,4 +11,4 @@ export default defineNuxtConfig({
         }
     },
     ssr: false
-})
+});
