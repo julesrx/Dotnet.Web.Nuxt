@@ -5,25 +5,23 @@ on: [ push ]
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        dotnet-version: [ '8.x.x' ]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: ${{ matrix.dotnet-version }}
+          dotnet-version: '8.x.x'
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-      
-      - name: Install pnpm
-        run: npm i -g pnpm@8
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
 
       - name: Install dependencies
         run: dotnet restore
