@@ -11,7 +11,7 @@ This template can be installed in multiple ways :
 ### Using `dotnet new`
 
 1. clone the repository
-2. in the repository, run `dotnet install .`
+2. in the repository, run `dotnet new install .`
 3. once installed, run `dotnet new nuxt -o <project-directory>` to create a project using the template
 
 ### Using GitHub's template feature
